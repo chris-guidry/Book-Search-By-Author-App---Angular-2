@@ -1,0 +1,19 @@
+<div class="initialSpacer" [hidden]="loaded">&#160;</div>
+<h1>Book Search By Author</h1>
+<input id="authors" name="authors" [formControl]="authors" type="text" placeholder="Enter Author Name" focus="true" required="true"/>
+
+<div class="book" *ngFor="let book of books | async">
+  <a href="{{book.volumeInfo.previewLink}}" target="_blank" class="linkImage">
+    <img [src]="book.volumeInfo.imageLinks?.smallThumbnail || 'app/images/no-cover.jpg'" width="50" height="80"/>
+  </a>
+  <div class="bookDetail">
+    <a href="{{book.volumeInfo.previewLink}}" target="_blank">
+        <span class="bookTitle">{{book.volumeInfo.title}}</span>
+    </a>
+    <span class="bookSubText">
+        by 
+        <a href="#" (click)="authorClick(book.volumeInfo.authors[0])">{{book.volumeInfo.authors[0]}}</a>{{book.volumeInfo.authors[1] ? ' et al.' : ''}}, {{book.volumeInfo.publishedDate | slice:0:4}}
+    </span>
+    <div>{{book.volumeInfo.description | slice:0:250}}{{book.volumeInfo.description?.length > 250 ? '...' : ''}}</div>
+  </div>
+</div>
