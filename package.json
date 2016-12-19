@@ -1,7 +1,7 @@
 {
-  "name": "angular-quickstart",
+  "name": "BookApp2",
   "version": "1.0.0",
-  "description": "QuickStart package.json from the documentation, supplemented with testing support",
+  "description": "App uses Google Books API and built with Angular 2, Bootstrap, and Font Awesome.",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "e2e": "tsc && concurrently \"http-server -s\" \"protractor protractor.config.js\" --kill-others --success first",
