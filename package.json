@@ -14,7 +14,7 @@
     "tsc:w": "tsc -w"
   },
   "keywords": [],
-  "author": "",
+  "author": "Chris Guidry",
   "license": "MIT",
   "dependencies": {
     "@angular/common": "~2.2.0",
